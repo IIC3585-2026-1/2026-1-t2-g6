@@ -52,3 +52,51 @@ const generarPaseAbordar = (pasaporte, visa, asiento) => {
         }, 500);
     });
 };
+
+
+
+
+const conTimeout = (promesa, ms) =>
+    Promise.race([
+        promesa,
+        new Promise((_, reject) =>
+            setTimeout(() => reject("Tiempo de espera agotado"), ms)
+        )
+    ]);
+
+const iniciarCheckIn = (pasajeroId) => {
+
+    const proceso = Promise.all([
+        // Verificar pasaporte y visa en paralelo para optimizar el tiempo
+        validarPasaporte(pasajeroId).then((resultado) => {
+            return resultado;
+        }),
+        verificarRestriccionesVisa(pasajeroId).then((resultado) => {
+            return resultado;
+        })
+    ])
+
+        // Si ambos procesos son exitosos, asignar asiento y generar pase de abordar
+        .then(([pasaporte, visa]) => {
+            return asignarAsiento()
+                .then((asiento) => ({ pasajeroId, pasaporte, visa, asiento }));
+        })
+
+        // Generar pase de abordar con los datos obtenidos
+        .then((datos) => {
+            return generarPaseAbordar(datos.pasaporte, datos.visa, datos.asiento);
+        })
+
+        // Se genera el pase de abordar
+        .then((pase) => {
+            return pase;
+        })
+
+        // Manejo de errores en cualquier etapa del proceso
+        .catch((error) => {
+            console.error(`Error: ${error}`);
+            throw error;
+        });
+
+    return conTimeout(proceso, 4000);
+};
