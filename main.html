@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Check-in Vuelo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="div-form">
+      <form>
+        <input
+          type="text"
+          id="input-id"
+          placeholder="Ingrese su ID de usuario"
+          class="input"
+        />
+        <button type="button" id="button-id" onclick="validarID()">
+          Validar
+        </button>
+      </form>
+      <div id="logs-id" class="logs"></div>
+    </div>
+    <div id="passport-info" class="passport-info" style="display: none"></div>
+
+    <script src="functions.js"></script>
+  </body>
+</html>

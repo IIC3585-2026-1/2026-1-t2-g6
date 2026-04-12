@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.div-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 1rem;
+  width: 60%;
+  padding: 2rem;
+  background-color: white;
+  /* gap: 2rem; */
+}
+
+.div-form form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.div-form input {
+  width: 30%;
+  padding: 1rem;
+  color: rgb(16, 0, 79);
+  border: 1px solid rgb(16, 0, 79);
+  border-radius: 1rem;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.div-form button {
+  color: white;
+  background-color: rgb(16, 0, 79);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 15%;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  &:hover {
+    background-color: white;
+    color: rgb(16, 0, 79);
+  }
+}
+
+.logs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logs p {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(16, 0, 79);
+  margin: 0rem 0rem;
+}
+
+.passport-info {
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 1rem;
+  width: 60%;
+  padding: 2rem;
+  background-color: white;
+  gap: 1rem;
+}
+
+.passport-info h1 {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(16, 0, 79);
+  margin: 0rem 0rem;
+}
+
+.passport-info p {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(16, 0, 79);
+  margin: 0rem 0rem;
+}
