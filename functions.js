@@ -1,11 +1,11 @@
 // Referecia de función: https://medium.com/@randomstr/generating-random-strings-in-javascript-and-its-frameworks-118cb1c9cba7
-function generateRandomString(length) {
+function generateRandomString() {
   let result = "";
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
+  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  result += characters.charAt(Math.floor(Math.random() * charactersLength));
   return result;
 }
 
@@ -38,7 +38,7 @@ const verificarRestriccionesVisa = (id) => {
 const asignarAsiento = () => {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      const randomString = generateRandomString(3);
+      const randomString = generateRandomString();
       resolve(randomString);
     }, 1000);
   });
