@@ -7,4 +7,4 @@
 
 ## Uso de la IA
 
-Como grupo utilizamos la IA para dividirnos las tareas entre los 3, eso hizo que cada integrante trabajara según sus tiempos en una implementación, de tal forma de evitar pisarnos entre nosotros y tener la funcionalidad lista para que el siguiente integrante pudiese avanzar sin problemas.
+Como grupo utilizamos la IA para dividirnos las tareas entre los 3, eso hizo que cada integrante trabajara según sus tiempos en una implementación, de tal forma de evitar pisarnos entre nosotros y tener la funcionalidad lista para que el siguiente integrante pudiese avanzar sin problemas, dado que la tarea es bastante secuencial.
