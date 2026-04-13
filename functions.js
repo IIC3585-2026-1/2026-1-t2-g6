@@ -62,7 +62,6 @@ const conTimeout = (promesa, ms) =>
 
 const iniciarCheckIn = (pasajeroId) => {
   const proceso = Promise.all([
-    // Verificar pasaporte y visa en paralelo para optimizar el tiempo
     validarPasaporte(pasajeroId).then((resultado) => {
       return resultado;
     }),
@@ -71,7 +70,6 @@ const iniciarCheckIn = (pasajeroId) => {
     }),
   ])
 
-    // Si ambos procesos son exitosos, asignar asiento y generar pase de abordar
     .then(([pasaporte, visa]) => {
       return asignarAsiento().then((asiento) => ({
         pasajeroId,
@@ -81,17 +79,14 @@ const iniciarCheckIn = (pasajeroId) => {
       }));
     })
 
-    // Generar pase de abordar con los datos obtenidos
     .then((datos) => {
       return generarPaseAbordar(datos.pasaporte, datos.visa, datos.asiento);
     })
 
-    // Se genera el pase de abordar
     .then((pase) => {
       return pase;
     })
 
-    // Manejo de errores en cualquier etapa del proceso
     .catch((error) => {
       console.error(`Error: ${error}`);
       throw error;
@@ -117,7 +112,7 @@ const validarID = () => {
     .then((resultado) => {
       logs.innerHTML = `<p>¡Pasaporte validado!</p>`;
       passport.innerHTML += `<p>Asiento ${resultado.asiento}</p>`;
-      passport.style.display = "grid";
+      passport.style.display = "flex";
     })
     .catch((error) => {
       logs.innerHTML += `<p>${error}</p>`;
